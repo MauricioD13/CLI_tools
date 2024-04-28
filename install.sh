@@ -7,12 +7,12 @@ apt update
 apt -y upgrade
 apt -y install bat neovim fzf httpie zsh tldr jq net-tools git
 
-if [ declare | grep -i -q "wsl" ]; then
-	os_type="wsl"
-	echo "[SYSTEM] You are in WSL"
-else
-	
+if declare | grep -i -q "wsl" ; then
 	echo "[SYSTEM] You are in Linux"
+	os_type="linux"
+else
+	os_type="wsl"	
+	echo "[SYSTEM] You are in WSL"
 
 fi
 
