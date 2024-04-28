@@ -1,0 +1,18 @@
+# CUSTOM CONFIG
+alias zshconfig="mate ~/.zshrc"
+alias ohmyzsh="mate ~/.oh-my-zsh" 
+alias ll="ls -la" 
+alias ls="ls --color=auto -h" 
+alias grep="grep --color=auto" 
+alias h="history" 
+alias now="date +"%T"" 
+alias ping="ping -c 2"
+alias top="atop" 
+alias df="df -h"
+alias bat="batcat"
+prompt_context() {
+  # Custom (Random emoji)
+  emojis=("⚡️" "🔥" "💀" "👑" "😎" "🍻" "🚀" "💡")
+  RAND_EMOJI_N=$(( $RANDOM % ${#emojis[@]} + 1))
+  prompt_segment black default "${emojis[$RAND_EMOJI_N]} "
+}
