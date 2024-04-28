@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Color vars
+
+RED='\e[0;31m'
+RESET='\e[0m'
 
 # Install of tools
 echo "[TOOLS] Installing tools"
@@ -89,8 +93,8 @@ elif [[ "$shell_type" = "dev" ]]; then
 	if [ $os_type="wsl" ]; then
 		echo "[WSL] For agnoster to work it's neccesary to clone this repo: https://github.com/powerline/fonts.git and install the font using the install.ps1 file"
 		echo "[WSL] Commands to run:"
-		echo "[POWERSHELL] git clone https://github.com/powerline/fonts.git"
-		echo "[POWERSHELL] powershell.exe -executionpolicy unrestricted install.ps1"
+		echo -e "${RED}[POWERSHELL] git clone https://github.com/powerline/fonts.git"
+		echo -e "${RED}[POWERSHELL] powershell.exe -executionpolicy unrestricted install.ps1"
 	fi
 else
 	echo "[SHELL] Option not available" 
@@ -104,7 +108,7 @@ if  ! cat $user_path/.zshrc | grep -i -q "CUSTOM CONFIG" ; then
 fi
 
 # Plugins Configuration
-echo "[SHELL] Installing and config plugins"
+echo -e "${RESET}[SHELL] Installing and config plugins"
 
 
 if [[ ! -d $user_path/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]]; then
@@ -119,4 +123,4 @@ file_perm=$(stat -c "%a" vim_config.sh)
 
 chmod u+x vim_config.sh
 echo "[VIM] Starting vim configuration"
-#/bin/bash vim_config.sh neovim
+/bin/bash vim_config.sh neovim
