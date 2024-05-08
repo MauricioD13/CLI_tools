@@ -22,4 +22,4 @@ For the theme agnoster there are some aditional configurations to do when is exe
 
 The last step is to configure neovim for some basics usefull features
 
-
+Note: Because of the lack of idempotency of this bash script and that I´m not going to create an inconceivablea amount of if statements. The update of this project is going to be in Ansible and I´m currently working on it, and that tool is really something 😎
